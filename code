@@ -1,0 +1,17 @@
+// ==UserScript==
+// @name         Instagram title bar
+// @namespace    https://instagram.com/
+// @version      1.0
+// @description  Adds a dark titlebar to the Instagram app on Chromium Browsers
+// @author       Lexan
+// @include     https://www.instagram.com/*
+// @include     https://www.instagram.com/
+// @grant        none
+// ==/UserScript==
+
+const theme = document.querySelector('meta[name="theme-color"]');
+if (theme) theme.remove();
+const meta = document.createElement('meta');
+meta.name = 'theme-color';
+meta.content = '#000';
+document.head.appendChild(meta);
